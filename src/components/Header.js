@@ -23,7 +23,6 @@ const NavList = styled.ul`
 const NavElement = styled.li`
   text-decoration: none;
   font-weight: 600;
-  /* Remove Magin left center problem*/
 `;
 const NavLink = styled(Link)`
   all: unset;
