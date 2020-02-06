@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import scissors from '../assets/icons8-scissors-64.png';
+import BurgerButton from './BurgerButton';
 
 const AppHeader = styled.nav`
   display: flex;
@@ -14,6 +15,7 @@ const AppHeader = styled.nav`
 
 const NavList = styled.ul`
   display: flex;
+  flex-direction: row;
   width: 100%;
   align-items: center;
   justify-content: space-around;
@@ -21,8 +23,12 @@ const NavList = styled.ul`
 `;
 
 const NavElement = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   text-decoration: none;
   font-weight: 600;
+  height: 100%;
 `;
 const NavLink = styled(Link)`
   all: unset;
@@ -31,9 +37,26 @@ const NavLink = styled(Link)`
   &:visited {
     color: black;
   }
+  &:after,
+  &:before {
+    display: block;
+    content: '';
+    border-bottom: solid 3px #019fb6;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+
+  &:before {
+    position: absolute;
+    bottom: 1.2em;
+    left: 0;
+    width: 100%;
+  }
+
   &:hover {
     cursor: pointer;
     color: #e83865;
+    border-bottom: solid 1px black;
   }
 `;
 
