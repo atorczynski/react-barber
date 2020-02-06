@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Image from '../assets/steve-johnson-8UmEJI_MJyk-unsplash.jpg';
 import Image2 from '../assets/jason-leung-2seUdPQNy_I-unsplash.jpg';
 import { useSpring, animated } from 'react-spring';
 
@@ -17,21 +16,36 @@ const BannerContainer = styled.div`
   background-size: 100%;
   background-position-y: 60%;
   background-repeat: no-repeat;
+  box-shadow: 0px 10px 35px -5px rgba(0, 0, 0, 0.75);
 `;
 
 const BannerText = styled.h1`
   font-size: 30px;
   z-index: 99;
   font-family: 'Satisfy', cursive;
-  color: white;
+  color: #ecebea;
   letter-spacing: 3px;
 `;
+const Line = styled.hr`
+  margin-top: -40px;
+  width: 400px;
+  transition: all 1s ease-in-out;
+  transition-property: margin-top;
+  @media screen and (max-width: 576px) {
+    margin-top: -30px;
+  }
+`;
+
 const BrandName = styled.h1`
-  font-size: 60px;
+  font-size: 80px;
   z-index: 99;
   font-family: 'Satisfy', cursive;
-  color: white;
+  color: #ecebea;
   letter-spacing: 3px;
+  transition: font-size 1s ease-in-out;
+  @media screen and (max-width: 576px) {
+    font-size: 50px;
+  }
 `;
 
 export default function AppBanner() {
@@ -58,6 +72,11 @@ export default function AppBanner() {
     transition: '4s',
     delay: 4000
   });
+  const lineAnimation = useSpring({
+    from: { opacity: '0' },
+    to: { opacity: '1' },
+    delay: 5000
+  });
 
   return (
     <animated.div style={animation}>
@@ -70,6 +89,9 @@ export default function AppBanner() {
         </animated.div>
         <animated.div style={textAnimation3}>
           <BrandName>BarberSpace</BrandName>
+        </animated.div>
+        <animated.div style={lineAnimation}>
+          <Line></Line>
         </animated.div>
       </BannerContainer>
     </animated.div>
