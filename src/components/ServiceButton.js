@@ -16,7 +16,7 @@ const ServiceButton = styled.button`
   transition: background-color 0.5s ease-in-out;
 
   &:hover {
-    background-color: #efa253;
+    background-color: #ffdca5;
   }
 `;
 

@@ -26,34 +26,53 @@ const ServiceHeading = styled.h2`
   border-radius: 5% 5% 0 0;
   font-family: 'Satisfy', cursive;
   width: 100%;
-  background: #efa253;
+  color: whitesmoke;
+  background: #656464;
   opacity: 90%;
 `;
 
-const ServicePrice = styled.h3``;
-
-const DescriptionWrapper = styled.div`
-  width: 95%;
-  height: 50%;
+const PriceWrapper = styled.div`
+  text-align: center;
+  height: 25%;
+  width: 100%;
+  background: #ffdca5;
+`;
+const ServicePrice = styled.h2`
+  font-weight: bold;
 `;
 
-const ServiceDescription = styled.p`
-  word-break: break-all;
+const ServiceTextWrapper = styled.div`
+  width: 100%;
+  text-align: center;
+  height: 20%;
+  font-size: 12px;
+
+  &:nth-child(even) {
+    background: lightgrey;
+  }
 `;
 
-const Seperator = styled.hr`
-  width: 90%;
+const ServiceText = styled.h3`
+  font-weight: lighter;
+  color: #262626;
 `;
 
 export default function Service(props) {
   return (
     <SericeBox>
       <ServiceHeading>{props.serviceName}</ServiceHeading>
-      <ServicePrice>{props.servicePrice}</ServicePrice>
-      <Seperator />
-      <DescriptionWrapper>
-        <ServiceDescription>{props.serviceDescription}</ServiceDescription>
-      </DescriptionWrapper>
+      <PriceWrapper>
+        <ServicePrice>{props.servicePrice}</ServicePrice>
+      </PriceWrapper>
+      <ServiceTextWrapper>
+        <ServiceText>{props.serviceTime}</ServiceText>
+      </ServiceTextWrapper>
+      <ServiceTextWrapper>
+        <ServiceText>{props.serviceExtra1}</ServiceText>
+      </ServiceTextWrapper>
+      <ServiceTextWrapper>
+        <ServiceText>{props.serviceExtra2}</ServiceText>
+      </ServiceTextWrapper>
       <ServiceButton onClick={props.onClick}>Book</ServiceButton>
     </SericeBox>
   );
