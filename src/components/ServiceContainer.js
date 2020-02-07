@@ -15,21 +15,27 @@ export default function ServiceContainer(props) {
   return (
     <ServiceWrapper>
       <ServiceBox
-        serviceName={props.serviceName1}
-        servicePrice={props.servicePrice1}
-        serviceDescription={props.serviceDescription1}
+        serviceName={'Kids Haircut'}
+        servicePrice={'$50'}
+        serviceTime={'1 Hour'}
+        serviceExtra1={'Premium Haircut'}
+        serviceExtra2={'Fulfill Kids Wish'}
         onClick={props.onClick}
       ></ServiceBox>
       <ServiceBox
-        serviceName={props.serviceName2}
-        servicePrice={props.servicePrice2}
-        serviceDescription={props.serviceDescription2}
+        serviceName={'Mister B'}
+        servicePrice={'$125'}
+        serviceTime={'2 Hour'}
+        serviceExtra1={'Haircut and Beard'}
+        serviceExtra2={'Premium Aftershave'}
         onClick={props.onClick}
       ></ServiceBox>
       <ServiceBox
-        serviceName={props.serviceName3}
-        servicePrice={props.servicePrice3}
-        serviceDescription={props.serviceDescription3}
+        serviceName={'Kingsley'}
+        servicePrice={'$175'}
+        serviceTime={'2 Hour'}
+        serviceExtra1={'Full Shave and Trimm'}
+        serviceExtra2={'Premium Styling'}
         onClick={props.onClick}
       ></ServiceBox>
     </ServiceWrapper>
