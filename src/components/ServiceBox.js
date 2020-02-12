@@ -14,7 +14,7 @@ const SericeBox = styled.div`
   background: #ecebea;
   box-shadow: 0px 10px 35px -30px rgba(0, 0, 0, 0.75);
 
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 320px) {
     margin-top: 20px;
   }
 `;
