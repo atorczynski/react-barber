@@ -80,7 +80,7 @@ export default function Header(props) {
       setWidescreen(true);
     }
   }
-  
+
   React.useEffect(() => {
     sizeHandler();
     window.addEventListener('resize', sizeHandler);
@@ -90,7 +90,6 @@ export default function Header(props) {
   return (
     <AppHeader>
       <BurgerButton
-        wideScreen={isWidescreen}
         showButton={isWidescreen === true ? false : true}
         open={open}
         onClick={() => (open === true ? setOpen(false) : setOpen(true))}
