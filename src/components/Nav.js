@@ -1,8 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import scissors from '../assets/icons8-scissors-64.png';
+import Menu from './Menu';
 import BurgerButton from './BurgerButton';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from 'react-scroll';
 
 const AppHeader = styled.nav`
   display: flex;
@@ -69,6 +77,10 @@ const AppLogo = styled.img`
   width: 64px;
 `;
 
+const NavElement1 = styled.p`
+  all: unset;
+`;
+
 export default function Header(props) {
   const [isWidescreen, setWidescreen] = React.useState([]);
   const [open, setOpen] = React.useState(false);
@@ -94,10 +106,18 @@ export default function Header(props) {
         open={open}
         onClick={() => (open === true ? setOpen(false) : setOpen(true))}
       />
+      <Menu open={open} onClick={() => setOpen()} />
       <NavList widescreen={isWidescreen}>
         <NavElement>
-          <NavLink to={'/home'} onClick={props.onClick}>
-            Home
+          <NavLink
+            to={'services'}
+            smooth={true}
+            spy={true}
+            duration={'1000'}
+            onClick={props.onClick}
+            activeClass={'hi'}
+          >
+            <NavElement1>Home</NavElement1>
           </NavLink>
         </NavElement>
         <NavElement>
