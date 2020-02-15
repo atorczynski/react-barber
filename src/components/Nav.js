@@ -1,8 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import scissors from '../assets/icons8-scissors-64.png';
+import Menu from './Menu';
 import BurgerButton from './BurgerButton';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from 'react-scroll';
 
 const AppHeader = styled.nav`
   display: flex;
@@ -11,10 +19,15 @@ const AppHeader = styled.nav`
   height: 100px;
   width: 100%;
   background: #ecebea;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 `;
 
 const NavList = styled.ul`
-  display: flex;
+  display: ${(props) => (props.widescreen === true ? 'flex' : 'none')};
   flex-direction: row;
   width: 100%;
   align-items: center;
@@ -64,13 +77,47 @@ const AppLogo = styled.img`
   width: 64px;
 `;
 
+const NavElement1 = styled.p`
+  all: unset;
+`;
+
 export default function Header(props) {
+  const [isWidescreen, setWidescreen] = React.useState([]);
+  const [open, setOpen] = React.useState(false);
+
+  function sizeHandler() {
+    if (window.innerWidth <= 600) {
+      setWidescreen(false);
+    } else {
+      setWidescreen(true);
+    }
+  }
+
+  React.useEffect(() => {
+    sizeHandler();
+    window.addEventListener('resize', sizeHandler);
+    return () => window.removeEventListener('resize', sizeHandler);
+  }, []);
+
   return (
     <AppHeader>
-      <NavList>
+      <BurgerButton
+        showButton={isWidescreen === true ? false : true}
+        open={open}
+        onClick={() => (open === true ? setOpen(false) : setOpen(true))}
+      />
+      <Menu open={open} onClick={() => setOpen()} />
+      <NavList widescreen={isWidescreen}>
         <NavElement>
-          <NavLink to={'/home'} onClick={props.onClick}>
-            Home
+          <NavLink
+            to={'services'}
+            smooth={true}
+            spy={true}
+            duration={'1000'}
+            onClick={props.onClick}
+            activeClass={'hi'}
+          >
+            <NavElement1>Home</NavElement1>
           </NavLink>
         </NavElement>
         <NavElement>

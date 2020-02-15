@@ -31,8 +31,9 @@ const Line = styled.hr`
   width: 400px;
   transition: all 1s ease-in-out;
   transition-property: margin-top;
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 600px) {
     margin-top: -30px;
+    width: 250px;
   }
 `;
 

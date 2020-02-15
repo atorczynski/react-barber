@@ -5,11 +5,11 @@ import { css } from '@emotion/core';
 export const StyledBurger = styled.button`
   top: 5%;
   left: 2rem;
-  display: flex;
+  display: ${(props) => (props.showButton === true ? 'flex' : 'none')};
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
-  right: 0;
+  margin: 0 20px 0 0;
   height: 2rem;
   background: transparent;
   border: none;
@@ -54,7 +54,11 @@ const open = css`
 
 export default function BurgerButton(props) {
   return (
-    <StyledBurger onClick={props.onClick} open={props.open}>
+    <StyledBurger
+      onClick={props.onClick}
+      open={props.open}
+      showButton={props.showButton}
+    >
       <div />
       <div />
       <div />
