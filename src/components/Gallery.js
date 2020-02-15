@@ -85,7 +85,7 @@ export default function Gallery() {
     ]
   };
   return (
-    <MySlider {...settings}>
+    <MySlider {...settings} className={'gallery'}>
       <Image>
         <SliderImage src='https://cdn.pixabay.com/photo/2018/02/22/17/09/barber-shop-3173422_960_720.jpg'></SliderImage>
       </Image>

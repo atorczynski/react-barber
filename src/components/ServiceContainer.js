@@ -13,7 +13,7 @@ const ServiceWrapper = styled.div`
 
 export default function ServiceContainer(props) {
   return (
-    <ServiceWrapper>
+    <ServiceWrapper className={'services'}>
       <ServiceBox
         serviceName={'Kids Haircut'}
         servicePrice={'$50'}
