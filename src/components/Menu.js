@@ -1,6 +1,13 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from 'react-scroll';
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -39,8 +46,16 @@ const Seperator = styled.hr`
 export default function Menu(props) {
   return (
     <StyledMenu open={props.open}>
-      <Link to={'/home'} onClick={props.onClick}>
-        <p>Home</p>
+      <Link
+        to={'/home'}
+        onClick={props.onClick}
+        to={'services'}
+        smooth={true}
+        spy={true}
+        duration={'1000'}
+        onClick={props.onClick}
+      >
+        <p>Services</p>
       </Link>
       <Seperator />
       <Link to={'/home'} onClick={props.onClick}>
@@ -57,11 +72,6 @@ export default function Menu(props) {
       <Seperator />
       <Link to={'/home'} onClick={props.onClick}>
         <p>Press</p>
-      </Link>
-      <Seperator />
-
-      <Link to={'/home'} onClick={props.onClick}>
-        <p>Home</p>
       </Link>
       <Seperator />
       <Link to={'/home'} onClick={props.onClick}>

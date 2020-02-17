@@ -8,7 +8,6 @@ const SericeBox = styled.div`
   flex-direction: column;
   align-items: center;
   height: 300px;
-  border-radius: 5%;
   width: 250px;
   flex-wrap: 0;
   background: #ecebea;

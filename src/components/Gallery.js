@@ -20,7 +20,7 @@ const MySlider = styled(Slider)`
   margin-top: 50px;
   outline: none;
   height: 500px;
-
+  overflow: auto;
   @media (min-width: 320px) {
     height: 300px;
   }
@@ -33,12 +33,8 @@ const MySlider = styled(Slider)`
 `;
 
 const SliderImage = styled.img`
-  margin: auto;
-  width: auto;
-
   @media (min-width: 320px) {
     height: 300px;
-    width: auto;
   }
   @media (min-width: 768px) {
     height: 400px;

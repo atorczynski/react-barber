@@ -115,7 +115,6 @@ export default function Header(props) {
             spy={true}
             duration={'1000'}
             onClick={props.onClick}
-            activeClass={'hi'}
           >
             <NavElement1>Home</NavElement1>
           </NavLink>
