@@ -13,10 +13,13 @@ const ServiceButton = styled.button`
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.05em;
   text-align: center;
-  transition: background-color 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: #0d836e;
+  color: white;
 
   &:hover {
-    background-color: #ffdca5;
+    background-color: #e83865;
+    color: black;
   }
 `;
 

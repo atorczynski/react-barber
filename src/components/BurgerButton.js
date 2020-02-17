@@ -9,7 +9,7 @@ export const StyledBurger = styled.button`
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
-  margin: 0 20px 0 0;
+  margin: 0 15px 0 0;
   height: 2rem;
   background: transparent;
   border: none;
@@ -22,7 +22,7 @@ export const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: black;
+    background: white;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
