@@ -9,6 +9,7 @@ const BannerContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
   width: 100%;
   height: 450px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
