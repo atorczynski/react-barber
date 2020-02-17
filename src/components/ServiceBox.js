@@ -7,11 +7,17 @@ const SericeBox = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  height: 300px;
+  height: 450px;
   width: 250px;
   flex-wrap: 0;
-  background: #ecebea;
+  background: #232a34;
   box-shadow: 0px 10px 35px -30px rgba(0, 0, 0, 0.75);
+  transition: transform 0.3s ease;
+  border-radius: 7px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media screen and (min-width: 320px) {
     margin-top: 20px;
@@ -20,40 +26,47 @@ const SericeBox = styled.div`
 
 const ServiceHeading = styled.h2`
   all: unset;
-  font-size: 20px;
+  height: 40px;
+  font-size: 22px;
   text-align: center;
   border-radius: 5% 5% 0 0;
   font-family: 'Satisfy', cursive;
   width: 100%;
   color: whitesmoke;
-  background: #656464;
-  opacity: 90%;
+  background: #4e5866;
 `;
 
 const PriceWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  height: 25%;
+  height: 15%;
   width: 100%;
-  background: #ffdca5;
+  background: #232a34;
 `;
 const ServicePrice = styled.h2`
+  font-size: 18px;
   font-weight: bold;
+  color: #f3f3f3;
 `;
 
-const ServiceTextWrapper = styled.div`
-  width: 100%;
-  text-align: center;
-  height: 20%;
-  font-size: 12px;
-
-  &:nth-child(even) {
-    background: lightgrey;
-  }
+const ServiceImageWraper = styled.div`
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  width: 90%;
+  height: 400px;
+  object-fit: cover;
+  overflow: hidden;
 `;
 
-const ServiceText = styled.h3`
-  font-weight: lighter;
-  color: #262626;
+const ServiceImage = styled.img`
+  border-radius: 25px;
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
+  height: auto;
 `;
 
 export default function Service(props) {
@@ -63,15 +76,9 @@ export default function Service(props) {
       <PriceWrapper>
         <ServicePrice>{props.servicePrice}</ServicePrice>
       </PriceWrapper>
-      <ServiceTextWrapper>
-        <ServiceText>{props.serviceTime}</ServiceText>
-      </ServiceTextWrapper>
-      <ServiceTextWrapper>
-        <ServiceText>{props.serviceExtra1}</ServiceText>
-      </ServiceTextWrapper>
-      <ServiceTextWrapper>
-        <ServiceText>{props.serviceExtra2}</ServiceText>
-      </ServiceTextWrapper>
+      <ServiceImageWraper>
+        <ServiceImage src={props.serviceImage} />
+      </ServiceImageWraper>
       <ServiceButton onClick={props.onClick}>Book</ServiceButton>
     </SericeBox>
   );
