@@ -16,14 +16,23 @@ const AppHeader = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 100px;
+  align-items: center;
+  height: 50px;
   width: 100%;
-  background: #ecebea;
+  background: #232a34;
   @media screen and (max-width: 600px) {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    height: 50px;
   }
+`;
+
+const Logo = styled.h1`
+  font-size: 20px;
+  margin-left: 15px;
+  color: whitesmoke;
+  font-family: 'Dancing Script', cursive;
 `;
 
 const NavList = styled.ul`
@@ -31,7 +40,7 @@ const NavList = styled.ul`
   flex-direction: row;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
   list-style: none;
 `;
 
@@ -45,7 +54,8 @@ const NavElement = styled.li`
 `;
 const NavLink = styled(Link)`
   all: unset;
-  color: black;
+  color: whitesmoke;
+  padding: 14px 20px;
   transition: color 0.4s ease;
   &:visited {
     color: black;
@@ -73,10 +83,6 @@ const NavLink = styled(Link)`
   }
 `;
 
-const AppLogo = styled.img`
-  width: 64px;
-`;
-
 const NavElement1 = styled.p`
   all: unset;
 `;
@@ -101,6 +107,7 @@ export default function Header(props) {
 
   return (
     <AppHeader>
+      <Logo>BARBERSPACE</Logo>
       <BurgerButton
         showButton={isWidescreen === true ? false : true}
         open={open}
@@ -134,7 +141,6 @@ export default function Header(props) {
             Blog
           </NavLink>
         </NavElement>
-        <AppLogo src={scissors} />
         <NavElement>
           <NavLink to={'/'} onClick={props.onClick}>
             Jobs
