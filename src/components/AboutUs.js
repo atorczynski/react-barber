@@ -39,7 +39,7 @@ export default function AboutUs(props) {
   const [drawer, setDrawer] = React.useState(true);
 
   const personTexts = {
-    marc:
+    lorem:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
   };
 
@@ -55,8 +55,7 @@ export default function AboutUs(props) {
           }
           personName={'Marc'}
           personCaption={'Hair Stylist'}
-          personDescription={personTexts.marc}
-          onClick={() => (drawer === true ? setDrawer(false) : setDrawer(true))}
+          personDescription={personTexts.lorem}
           drawer={drawer}
         />
 
@@ -66,7 +65,7 @@ export default function AboutUs(props) {
           }
           personCaption={'Beard Specialist'}
           personName={'Marc'}
-          personDescription={personTexts.marc}
+          personDescription={personTexts.lorem}
         />
         <AboutPerson
           img={
@@ -74,6 +73,7 @@ export default function AboutUs(props) {
           }
           personName={'Klaus'}
           personCaption={'Barber'}
+          personDescription={personTexts.lorem}
         />
       </PersonWrapper>
     </AboutUsWrapper>
