@@ -64,7 +64,7 @@ const PersonDetailContainer = styled.div`
 
 const PersonDetails = styled.p``;
 
-const Collapsible1 = styled(Collapsible)`
+const CollapsibleDrawer = styled(Collapsible)`
   text-align: center;
 
   &::before {
@@ -73,6 +73,10 @@ const Collapsible1 = styled(Collapsible)`
   &::after {
     text-align: center;
   }
+`;
+
+const CollapsibleText = styled.p`
+  color: white;
 `;
 
 export default function AboutPerson(props) {
@@ -84,24 +88,14 @@ export default function AboutPerson(props) {
       <PersonTextWrapper>
         <PersonText>{props.personName}</PersonText>
         <PersonCaption>{props.personCaption}</PersonCaption>
-        <Collapsible1
+        <CollapsibleDrawer
           trigger={<Button>More</Button>}
           triggerWhenOpen={<Button>Close</Button>}
           openedClassName={'Collapsible_triggered'}
         >
-          <p>
-            This is the collapsible content. It can be any element or React
-            component you like.
-          </p>
-          <p>
-            It can even be another Collapsible component. Check out the next
-            section!
-          </p>
-        </Collapsible1>
+          <PersonDetails>{props.personDescription}</PersonDetails>
+        </CollapsibleDrawer>
       </PersonTextWrapper>
-      <PersonDetailContainer>
-        <PersonDetails>{props.personDescription}</PersonDetails>
-      </PersonDetailContainer>
     </PersonContainer>
   );
 }

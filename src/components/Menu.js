@@ -27,7 +27,7 @@ const StyledMenu = styled.nav`
   transition: transform 0.3s ease-in-out;
   a {
     font-size: 0.8rem;
-    color: inherit;
+    color: whitesmoke;
 
     text-align: center;
     text-transform: uppercase;
