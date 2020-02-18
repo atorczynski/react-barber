@@ -13,7 +13,7 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: grey;
+  background: #232a34;
   z-index: 5;
   height: 100vh;
   width: 100%;
@@ -48,7 +48,6 @@ export default function Menu(props) {
     <StyledMenu open={props.open}>
       <Link
         to={'/home'}
-        onClick={props.onClick}
         to={'services'}
         smooth={true}
         spy={true}

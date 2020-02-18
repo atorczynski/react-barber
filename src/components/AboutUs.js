@@ -4,50 +4,78 @@ import AboutPerson from './AboutPerson';
 
 const AboutUsWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   width: 100%;
-  flex-wrap: wrap;
-  height: 325px;
-  background: #ffdca5;
+  overflow: hidden;
   margin-top: 50px;
-  background: lightgray;
   box-shadow: 0px 10px 35px -5px rgba(0, 0, 0, 0.75);
+`;
 
-  @media (min-width: 320px) {
-    height: 950px;
-  }
-  @media (min-width: 768px) {
-    height: 400px;
-  }
-  @media (min-width: 992px) {
-    height: 500px;
-  }
+const HeadingWrapper = styled.div`
+  display: flex;
+  height: 50px;
+  width: 100%;
+  background: #4e5866;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Heading = styled.h2`
+  font-size: 18px;
+  color: white;
+  text-decoration: underline;
+`;
+
+const PersonWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+  flex-wrap: wrap;
+  background: #232a34;
+  width: 100%;
 `;
 
 export default function AboutUs(props) {
+  const [drawer, setDrawer] = React.useState(true);
+
+  const personTexts = {
+    marc:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+  };
+
   return (
     <AboutUsWrapper>
-      <AboutPerson
-        img={
-          'https://cdn.pixabay.com/photo/2016/11/29/05/11/adult-1867471_960_720.jpg'
-        }
-        personName={'Marc'}
-        personCaption={'Hair Stylist'}
-      />
-      <AboutPerson
-        img={
-          'https://cdn.shopify.com/s/files/1/0086/0969/3776/articles/20160607_ReuzelPomade_11_2171_copy_360x271.jpg?v=1561394516'
-        }
-        personCaption={'Beard Specialist'}
-        personName={'Marc'}
-      />
-      <AboutPerson
-        img={
-          'http://www.mens-hairstyle.com/wp-content/uploads/2017/09/Beard-and-Hair-Style.jpg'
-        }
-        personName={'Klaus'}
-        personCaption={'Barber'}
-      />
+      <HeadingWrapper>
+        <Heading>About Us</Heading>
+      </HeadingWrapper>
+      <PersonWrapper>
+        <AboutPerson
+          img={
+            'https://cdn.pixabay.com/photo/2016/11/29/05/11/adult-1867471_960_720.jpg'
+          }
+          personName={'Marc'}
+          personCaption={'Hair Stylist'}
+          personDescription={personTexts.marc}
+          onClick={() => (drawer === true ? setDrawer(false) : setDrawer(true))}
+          drawer={drawer}
+        />
+
+        <AboutPerson
+          img={
+            'https://cdn.shopify.com/s/files/1/0086/0969/3776/articles/20160607_ReuzelPomade_11_2171_copy_360x271.jpg?v=1561394516'
+          }
+          personCaption={'Beard Specialist'}
+          personName={'Marc'}
+          personDescription={personTexts.marc}
+        />
+        <AboutPerson
+          img={
+            'http://www.mens-hairstyle.com/wp-content/uploads/2017/09/Beard-and-Hair-Style.jpg'
+          }
+          personName={'Klaus'}
+          personCaption={'Barber'}
+        />
+      </PersonWrapper>
     </AboutUsWrapper>
   );
 }

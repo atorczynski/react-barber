@@ -1,13 +1,22 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Button from './ServiceButton';
+import Collapsible from 'react-collapsible';
+import style from '../style.css';
 
 const PersonContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 250px;
-  height: auto;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 25px;
+  }
+  @media screen and (min-width: 600px) {
+    margin-top: 50px;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -36,10 +45,34 @@ const Image = styled.img`
   filter: grayscale(100%);
 `;
 
-const PersonText = styled.h3``;
+const PersonText = styled.h3`
+  all: unset;
+  margin-top: 10px;
+  color: white;
+`;
 
 const PersonCaption = styled.p`
+  all: unset;
   font-style: oblique;
+  color: white;
+`;
+
+const PersonDetailContainer = styled.div`
+  display: ${(props) => (props.drawer === true ? 'block' : 'none')};
+  height: 500px;
+`;
+
+const PersonDetails = styled.p``;
+
+const Collapsible1 = styled(Collapsible)`
+  text-align: center;
+
+  &::before {
+    text-align: center;
+  }
+  &::after {
+    text-align: center;
+  }
 `;
 
 export default function AboutPerson(props) {
@@ -51,7 +84,24 @@ export default function AboutPerson(props) {
       <PersonTextWrapper>
         <PersonText>{props.personName}</PersonText>
         <PersonCaption>{props.personCaption}</PersonCaption>
+        <Collapsible1
+          trigger={<Button>More</Button>}
+          triggerWhenOpen={<Button>Close</Button>}
+          openedClassName={'Collapsible_triggered'}
+        >
+          <p>
+            This is the collapsible content. It can be any element or React
+            component you like.
+          </p>
+          <p>
+            It can even be another Collapsible component. Check out the next
+            section!
+          </p>
+        </Collapsible1>
       </PersonTextWrapper>
+      <PersonDetailContainer>
+        <PersonDetails>{props.personDescription}</PersonDetails>
+      </PersonDetailContainer>
     </PersonContainer>
   );
 }
