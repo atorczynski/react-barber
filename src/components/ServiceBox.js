@@ -20,7 +20,7 @@ const SericeBox = styled.div`
   }
 
   @media screen and (min-width: 320px) {
-    margin-top: 20px;
+    margin: 35px 0 35px 0;
   }
 `;
 
