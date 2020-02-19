@@ -5,19 +5,22 @@ import Heading from './Heading';
 
 const GalleryWrapper = styled.div`
   margin-top: 30px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Image = styled.div`
   display: flex;
   justify-content: center;
-  height: 700px;
+  height: 600px;
   overflow: hidden;
 
   @media (min-width: 320px) {
-    height: 300px;
+    height: 400px;
   }
   @media (min-width: 768px) {
-    height: 400px;
+    height: 500px;
   }
   @media (min-width: 992px) {
     height: 500px;
@@ -28,6 +31,7 @@ const MySlider = styled(Slider)`
   outline: none;
   height: 500px;
   overflow: hidden;
+  margin-top: 50px;
   @media (min-width: 320px) {
     height: 300px;
   }
