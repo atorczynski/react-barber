@@ -116,6 +116,11 @@ export default function Header(props) {
       <Menu open={open} onClick={() => setOpen()} />
       <NavList widescreen={isWidescreen}>
         <NavElement>
+          <NavLink>
+            <NavElement1>Home</NavElement1>
+          </NavLink>
+        </NavElement>
+        <NavElement>
           <NavLink
             to={'services'}
             smooth={true}
@@ -123,31 +128,28 @@ export default function Header(props) {
             duration={'1000'}
             onClick={props.onClick}
           >
-            <NavElement1>Home</NavElement1>
-          </NavLink>
-        </NavElement>
-        <NavElement>
-          <NavLink to={'/'} onClick={props.onClick}>
             Service
           </NavLink>
         </NavElement>
         <NavElement>
-          <NavLink to={'/'} onClick={props.onClick}>
+          <NavLink
+            to={'aboutus'}
+            smooth={true}
+            spy={true}
+            duration={'1000'}
+            onClick={props.onClick}
+          >
             About Us
           </NavLink>
         </NavElement>
         <NavElement>
-          <NavLink to={'/'} onClick={props.onClick}>
-            Blog
-          </NavLink>
-        </NavElement>
-        <NavElement>
-          <NavLink to={'/'} onClick={props.onClick}>
-            Jobs
-          </NavLink>
-        </NavElement>
-        <NavElement>
-          <NavLink to={'/'} onClick={props.onClick}>
+          <NavLink
+            to={'gallery'}
+            smooth={true}
+            spy={true}
+            duration={'1000'}
+            onClick={props.onClick}
+          >
             Gallery
           </NavLink>
         </NavElement>

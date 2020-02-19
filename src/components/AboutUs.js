@@ -21,7 +21,6 @@ const HeadingWrapper = styled.div`
 `;
 
 const Heading = styled.h2`
-  font-size: 18px;
   color: white;
   text-decoration: underline;
 `;
@@ -36,15 +35,13 @@ const PersonWrapper = styled.div`
 `;
 
 export default function AboutUs(props) {
-  const [drawer, setDrawer] = React.useState(true);
-
   const personTexts = {
     lorem:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
   };
 
   return (
-    <AboutUsWrapper>
+    <AboutUsWrapper className={'aboutus'}>
       <HeadingWrapper>
         <Heading>About Us</Heading>
       </HeadingWrapper>
@@ -56,7 +53,6 @@ export default function AboutUs(props) {
           personName={'Marc'}
           personCaption={'Hair Stylist'}
           personDescription={personTexts.lorem}
-          drawer={drawer}
         />
 
         <AboutPerson
