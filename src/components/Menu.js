@@ -47,7 +47,6 @@ export default function Menu(props) {
   return (
     <StyledMenu open={props.open}>
       <Link
-        to={'/home'}
         to={'services'}
         smooth={true}
         spy={true}
@@ -57,23 +56,31 @@ export default function Menu(props) {
         <p>Services</p>
       </Link>
       <Seperator />
-      <Link to={'/home'} onClick={props.onClick}>
-        <p>Service</p>
-      </Link>
-      <Seperator />
-      <Link to={'/home'} onClick={props.onClick}>
+      <Link
+        to={'aboutus'}
+        smooth={true}
+        spy={true}
+        duration={'1000'}
+        onClick={props.onClick}
+      >
         <p>About Us</p>
       </Link>
       <Seperator />
-      <Link to={'/home'} onClick={props.onClick}>
+      <Link
+        to={'gallery'}
+        smooth={true}
+        spy={true}
+        duration={'1000'}
+        onClick={props.onClick}
+      >
         <p>Gallery</p>
       </Link>
       <Seperator />
-      <Link to={'/home'} onClick={props.onClick}>
+      <Link to={'press'} onClick={props.onClick}>
         <p>Press</p>
       </Link>
       <Seperator />
-      <Link to={'/home'} onClick={props.onClick}>
+      <Link to={'contact'} onClick={props.onClick}>
         <p>Contact</p>
       </Link>
     </StyledMenu>
