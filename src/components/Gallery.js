@@ -93,7 +93,11 @@ export default function Gallery() {
   };
   return (
     <GalleryWrapper className={'gallery'}>
-      <Heading heading={'Gallery'} />
+      <Heading
+        backgroundColor={'#eae8e8'}
+        textColor={'#232a34'}
+        heading={'Gallery'}
+      />
       <MySlider {...settings} className={'gallery'}>
         <Image>
           <SliderImage src='https://cdn.pixabay.com/photo/2018/02/22/17/09/barber-shop-3173422_960_720.jpg'></SliderImage>

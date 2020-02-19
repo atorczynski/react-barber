@@ -154,12 +154,13 @@ export default function Header(props) {
           </NavLink>
         </NavElement>
         <NavElement>
-          <NavLink to={'/'} onClick={props.onClick}>
-            Press
-          </NavLink>
-        </NavElement>
-        <NavElement>
-          <NavLink to={'/'} onClick={props.onClick}>
+          <NavLink
+            to={'press'}
+            smooth={true}
+            spy={true}
+            duration={'1000'}
+            onClick={props.onClick}
+          >
             Contact
           </NavLink>
         </NavElement>

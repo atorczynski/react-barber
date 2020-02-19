@@ -5,20 +5,20 @@ const HeadingWrapper = styled.div`
   display: flex;
   height: 50px;
   width: 100%;
-  background: #e0e0e0;
+  background: ${(props) => props.backgroundColor};
   justify-content: center;
   align-items: center;
 `;
 
 const HeadingText = styled.h2`
-  color: #232a34;
+  color: ${(props) => props.textColor};
   text-decoration: underline;
 `;
 
 export default function Heading(props) {
   return (
-    <HeadingWrapper>
-      <HeadingText>{props.heading}</HeadingText>
+    <HeadingWrapper backgroundColor={props.backgroundColor}>
+      <HeadingText textColor={props.textColor}>{props.heading}</HeadingText>
     </HeadingWrapper>
   );
 }

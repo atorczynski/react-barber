@@ -7,6 +7,7 @@ import ServiceContainer from './components/ServiceContainer';
 import styled from '@emotion/styled';
 import AboutUs from './components/AboutUs';
 import Gallery from './components/Gallery';
+import Contact from './components/Contact';
 
 const Services = styled(ServiceContainer)`
   color: blue;
@@ -21,6 +22,7 @@ function App() {
       <Services />
       <AboutUs />
       <Gallery />
+      <Contact />
     </Router>
   );
 }
