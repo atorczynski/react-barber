@@ -14,7 +14,7 @@ const FormWrapper = styled.div`
   background: #232a34;
 
   @media screen and (min-width: 600px) {
-    height: 800px;
+    height: 500px;
   }
 `;
 
