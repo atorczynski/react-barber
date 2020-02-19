@@ -76,11 +76,13 @@ export default function Menu(props) {
         <p>Gallery</p>
       </Link>
       <Seperator />
-      <Link to={'press'} onClick={props.onClick}>
-        <p>Press</p>
-      </Link>
-      <Seperator />
-      <Link to={'contact'} onClick={props.onClick}>
+      <Link
+        to={'contact'}
+        smooth={true}
+        spy={true}
+        duration={'1000'}
+        onClick={props.onClick}
+      >
         <p>Contact</p>
       </Link>
     </StyledMenu>
