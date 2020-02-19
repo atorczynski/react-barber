@@ -1,9 +1,17 @@
 import React from 'react';
 import Slider from 'react-slick';
 import styled from '@emotion/styled';
+import Heading from './Heading';
+
+const GalleryWrapper = styled.div`
+  margin-top: 30px;
+`;
 
 const Image = styled.div`
-  height: 500px;
+  display: flex;
+  justify-content: center;
+  height: 700px;
+  overflow: hidden;
 
   @media (min-width: 320px) {
     height: 300px;
@@ -17,10 +25,9 @@ const Image = styled.div`
 `;
 
 const MySlider = styled(Slider)`
-  margin-top: 50px;
   outline: none;
   height: 500px;
-  overflow: auto;
+  overflow: hidden;
   @media (min-width: 320px) {
     height: 300px;
   }
@@ -35,11 +42,14 @@ const MySlider = styled(Slider)`
 const SliderImage = styled.img`
   @media (min-width: 320px) {
     height: 300px;
+    margin: auto;
   }
   @media (min-width: 768px) {
+    margin: auto;
     height: 400px;
   }
   @media (min-width: 992px) {
+    margin: auto;
     height: 500px;
   }
 `;
@@ -50,17 +60,18 @@ export default function Gallery() {
     arrows: true,
     infinite: true,
     speed: 500,
-    adaptiveHeight: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
+    centerMode: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: true
+          infinite: true,
+          centerMode: true
         }
       },
       {
@@ -81,19 +92,22 @@ export default function Gallery() {
     ]
   };
   return (
-    <MySlider {...settings} className={'gallery'}>
-      <Image>
-        <SliderImage src='https://cdn.pixabay.com/photo/2018/02/22/17/09/barber-shop-3173422_960_720.jpg'></SliderImage>
-      </Image>
-      <Image>
-        <SliderImage src='https://cdn.pixabay.com/photo/2016/02/04/17/13/razor-1179458_960_720.jpg'></SliderImage>
-      </Image>
-      <Image>
-        <SliderImage src='https://cdn.pixabay.com/photo/2018/02/22/17/08/barber-3173419_960_720.jpg'></SliderImage>
-      </Image>
-      <Image>
-        <SliderImage src='https://cdn.pixabay.com/photo/2020/02/03/17/39/beach-4816249_960_720.jpg'></SliderImage>
-      </Image>
-    </MySlider>
+    <GalleryWrapper className={'gallery'}>
+      <Heading heading={'Gallery'} />
+      <MySlider {...settings} className={'gallery'}>
+        <Image>
+          <SliderImage src='https://cdn.pixabay.com/photo/2018/02/22/17/09/barber-shop-3173422_960_720.jpg'></SliderImage>
+        </Image>
+        <Image>
+          <SliderImage src='https://cdn.pixabay.com/photo/2016/02/04/17/13/razor-1179458_960_720.jpg'></SliderImage>
+        </Image>
+        <Image>
+          <SliderImage src='https://cdn.pixabay.com/photo/2018/02/22/17/08/barber-3173419_960_720.jpg'></SliderImage>
+        </Image>
+        <Image>
+          <SliderImage src='https://cdn.pixabay.com/photo/2020/02/03/17/39/beach-4816249_960_720.jpg'></SliderImage>
+        </Image>
+      </MySlider>
+    </GalleryWrapper>
   );
 }

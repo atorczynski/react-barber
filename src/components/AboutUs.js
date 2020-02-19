@@ -21,7 +21,6 @@ const HeadingWrapper = styled.div`
 `;
 
 const Heading = styled.h2`
-  font-size: 18px;
   color: white;
   text-decoration: underline;
 `;
@@ -44,7 +43,7 @@ export default function AboutUs(props) {
   };
 
   return (
-    <AboutUsWrapper>
+    <AboutUsWrapper className={'aboutus'}>
       <HeadingWrapper>
         <Heading>About Us</Heading>
       </HeadingWrapper>
